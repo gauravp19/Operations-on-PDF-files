@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample Template</title>
+        <style>
+            body {
+            margin: auto;
+            width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/pdf" method="post">
+            <input type="text" value="First Name" size="20" onchange="getPageHTML()">
+            <input type="text" value="Last Name" size="20">
+            <input type="hidden" id="hidden_element" name="hidden_element">
+            <input type="submit" value="Convert_to_PDF" size="20" onclick="getPageHTML()">
+        </form>
+    </body>
+	<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+	<script>
+        function getPageHTML() {
+			var hidden_element = document.getElementById("hidden_element");
+			hidden_element.setAttribute("value", "<html>" + $("html").html() + "</html>");
+        }
+    </script>
+</html>
+<button>This is a buttonoutside HTML tag</button>
